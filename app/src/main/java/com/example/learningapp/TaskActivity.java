@@ -3,6 +3,7 @@ package com.example.learningapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,39 +14,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskActivity extends AppCompatActivity {
+
     RecyclerView TaskRV;
-    TextView NotificationTV, NameTV;
-    VerticalAdapter<Task> taskAdapter;
+    TextView NotificationTV, NameTV, EmailTV;
     List<Task> taskList;
     User user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
+
+        // Retrieve the User object from intent
         user = (User) getIntent().getSerializableExtra("User");
 
-        // Initialize view components
-        TaskRV = (RecyclerView) findViewById(R.id.TaskRecyclerView);
-        NotificationTV = (TextView) findViewById(R.id.Notification);
-        NameTV = (TextView) findViewById(R.id.YourName);
+        // Bind view elements
+        TaskRV = findViewById(R.id.TaskRecyclerView);
+        NotificationTV = findViewById(R.id.Notification);
+        NameTV = findViewById(R.id.YourName);
+        EmailTV = findViewById(R.id.YourEmail);  // Added binding for email TextView
 
-        // Generate task based on user's interests and update notification
+        // Set user info
+        NameTV.setText(user.getUsername());
+        EmailTV.setText(user.getEmail());  // Set user email
+
+        // Generate tasks if empty
         if (user.getTasks().isEmpty()) GenerateTask();
         taskList = user.getTasks();
-        Log.d("TaskActivity", "Number of tasks: " + taskList.size());
-        NotificationTV.setText("You have " + countIncompleteTasks(taskList) +" task due");
-        NameTV.setText(user.getUsername());
 
-        // Setup recyclerview
-        taskAdapter = new VerticalAdapter<Task>(taskList, (item, selection) -> {
-            Intent intent = new Intent(TaskActivity.this, TaskDetailsActivity.class);
-            intent.putExtra("Topic", item.getTitle());
-            intent.putExtra("Description", item.getDescription());
-            intent.putExtra("User", user);
-            startActivity(intent);
-        });
-        TaskRV.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        TaskRV.setAdapter(taskAdapter);
+        // Logging and notification update
+        Log.d("TaskActivity", "Number of tasks: " + taskList.size());
+        int incompleteCount = countIncompleteTasks(taskList);
+        EmailTV.setText(user.getEmail());
+        NotificationTV.setText("You have " + incompleteCount + " task" + (incompleteCount != 1 ? "s" : "") + " due");
+
+        // Set up RecyclerView
+
+        TaskRV.setLayoutManager(new LinearLayoutManager(this));
+
     }
 
     private void GenerateTask() {

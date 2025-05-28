@@ -14,7 +14,6 @@ import java.util.List;
 public class ResultActivity extends AppCompatActivity {
     private List<Result> resultList;
     RecyclerView ResultRV;
-    VerticalAdapter ResultAdapter;
     Button ContinueBTN;
     User user;
 
@@ -33,8 +32,6 @@ public class ResultActivity extends AppCompatActivity {
 
         // Setup recyclerview
         ResultRV.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        ResultAdapter = new VerticalAdapter(resultList, null);
-        ResultRV.setAdapter(ResultAdapter);
 
         // Setup button
         ContinueBTN.setOnClickListener(new View.OnClickListener() {
