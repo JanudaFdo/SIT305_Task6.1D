@@ -22,7 +22,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="30dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/card_background">
 
             <TextView
                 android:id="@+id/Hello"
@@ -42,26 +43,29 @@
                 android:textSize="50dp"
                 android:textStyle="bold" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/YourEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="youremailgmail.com"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/AvatarImageView"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            tools:srcCompat="@tools:sample/avatars" />
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:paddingLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bar_background"
         android:gravity="center_vertical"
-        android:background="@drawable/bar_background">
+        android:orientation="horizontal"
+        android:paddingLeft="20dp">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -76,10 +80,84 @@
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:text="You have 1 task due"
-            android:textSize="20dp"
             android:textColor="@color/black"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/TotalQuestion"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:gravity="center"
+                android:text="Total Questions: 10"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/card_background" />
+
+            <TextView
+                android:id="@+id/CorrectlyAnswered"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Correctly Answered: 7"
+                android:textColor="@color/white"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/IncorrectAnswers"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Incorrectly Answered: 3"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/white"
+                android:textSize="24dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/ShareButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="Share"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:backgroundTint="#00e676"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -87,6 +165,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"/>
-
 
 </LinearLayout>

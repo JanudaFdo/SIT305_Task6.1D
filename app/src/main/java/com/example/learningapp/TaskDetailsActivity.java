@@ -35,7 +35,6 @@ public class TaskDetailsActivity extends AppCompatActivity {
     private TextView TitleTV, DescriptionTV;
     private Button SubmitBTN;
     private ManagerDB managerDB;
-    private VerticalAdapter<Quiz> quizAdapter;
     private List<Quiz> quizList = new ArrayList<>();
     private ProgressDialog pd;
 
@@ -95,7 +94,6 @@ public class TaskDetailsActivity extends AppCompatActivity {
                     }
 
                     Log.d("QuizList", "Quiz fetched: " + new Gson().toJson(quizList));
-                    initQuizAdapter(quizList);
                     SubmitBTN.setEnabled(true);
                 } else {
                     Log.e("QuizFetch", "Response code: " + response.code());
@@ -112,17 +110,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
         });
     }
 
-    private void initQuizAdapter(List<Quiz> quizzes) {
-        quizAdapter = new VerticalAdapter<>(quizzes, (item, selection) -> {
-            int position = quizzes.indexOf(item);
-            if (position != -1) {
-                quizSelection[position] = selection;
-                Log.d("QuizSelection", "Position: " + position + " Answer: " + selection);
-            }
-        });
 
-        QuizRV.setAdapter(quizAdapter);
-    }
 
     private void setupSubmitButton() {
         SubmitBTN.setOnClickListener(v -> {
