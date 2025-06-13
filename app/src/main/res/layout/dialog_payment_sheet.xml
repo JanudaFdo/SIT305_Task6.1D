@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/option_google_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_unselected"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_gpay"/>
+
+        <TextView
+            android:id="@+id/label_gpay"
+            android:layout_width="78dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="12dp"
+            android:text="Google Pay"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/option_visa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_unselected"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_visa"/>
+
+        <TextView
+            android:id="@+id/label_visa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visa Card (•••• 1234)"
+            android:textSize="16sp"
+            android:layout_marginStart="12dp"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_pay_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pay for Advanced Plan"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#00e676" />
+
+</LinearLayout>

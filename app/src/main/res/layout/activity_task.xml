@@ -120,7 +120,7 @@
                 android:background="@drawable/card_background"
                 android:gravity="center"
                 android:padding="20dp"
-                android:text="Correctly Answered: 7"
+                android:text="Correctly Answered: 6"
                 android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold" />
@@ -139,7 +139,7 @@
                 android:gravity="center"
                 android:padding="20dp"
                 android:layout_marginTop="10dp"
-                android:text="Incorrectly Answered: 3"
+                android:text="Incorrectly Answered: 4"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/white"
                 android:textSize="24dp"

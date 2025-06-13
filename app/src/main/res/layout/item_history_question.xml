@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/main_background"    android:padding="16dp"
+    android:layout_marginBottom="12dp">
+
+    <!-- Clickable header row -->
+    <LinearLayout
+        android:id="@+id/header_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_hist_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1. Question 1"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_expand_toggle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/arrow_down_float"
+            app:tint="@android:color/white" />
+    </LinearLayout>
+
+    <!-- Expandable content section -->
+    <LinearLayout
+        android:id="@+id/expand_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_hist_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full question goes here."
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:id="@+id/tv_opt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_opt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_opt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_opt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="4dp" />
+    </LinearLayout>
+</LinearLayout>
