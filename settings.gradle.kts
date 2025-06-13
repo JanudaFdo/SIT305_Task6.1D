@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LearningApp"
+rootProject.name = "UpdatedSmartLearnApp"
 include(":app")
  
